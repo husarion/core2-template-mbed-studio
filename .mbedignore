@@ -1,0 +1,10 @@
+mbed-os/features/cellular/*
+mbed-os/features/cryptocell/*
+mbed-os/features/deprecated_warnings/*
+mbed-os/features/lorawan/*
+mbed-os/features/lwipstack/*
+mbed-os/features/nanostack/*
+mbed-os/features/netsocket/*
+mbed-os/features/nfc/*
+components/wifi/*
+components/802.15.4_RF/*
