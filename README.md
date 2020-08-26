@@ -1,43 +1,76 @@
 ![](./resources/official_armmbed_example_badge.png)
 # Blinky Mbed OS example
 
-The example project is part of the [Arm Mbed OS Official Examples](https://os.mbed.com/code/) and is the [getting started example for Mbed OS](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application that repeatedly blinks an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
+The example project is part of the [Arm Mbed OS Official Examples](https://os.mbed.com/code/) and is the [getting started example for Mbed OS](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application that repeatedly blinks an LED on the Mbed OS supporting boards.
 
-You can build the project with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command-line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
-(Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
+This template contains configuration files for **CORE2** target.
 
-1. [Install Mbed CLI](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html).
-1. From the command-line, import the example: `mbed import mbed-os-example-blinky`
-1. Change the current directory to where the project was imported.
+## Mbed Studio IDE installation and configuration
+
+To install the Mbed Studio IDE follow instructions from this manual: 
+* https://os.mbed.com/docs/mbed-studio/current/installing/installing-mbed-studio.html
+
+
+We recommend you to switch default compiler to **Arm Embedded GCC Compiler 9-2019-q4-major**. Instruction on how to do that can be found here: 
+* https://os.mbed.com/docs/mbed-studio/current/installing/switching-to-gcc.html
+
+## Importing a Blinky program
+
+* Open [Mbed Studio](https://os.mbed.com/studio/) IDE. 
+* From menu select `File -> Import Program...` 
+* In **Import program** dialog box paste link to this repository. 
+* In **Mbed OS Location** select first option if you want to download a new copy of Mbed OS and store it in your program folder. In case you want to share single instance of the Mbed OS library among many programs download it to a known location and proceed with the option number two. 
+* Finalize the import by clicking **Add Program**.
+
+<p align="center">
+  <img src="./resources/mbed_studio_instruction1.png" />
+</p>
+
+## Selecting a custom build target
+
+* Attach your ST-LINK probe to CORE2, power-up the board and connect the programmer to your computer. 
+* Open **Target** drop-down list and click on **Mangage custom targets** button.
+
+<p align="center">
+  <img src="./resources/mbed_studio_instruction2.png" />
+</p>
+
+Following dialog box should appear:
+
+<p align="center">
+  <img src="./resources/mbed_studio_instruction3.png" />
+</p>
+
+* From the **USB device** drop-down list choose the detected ST-LINK probe. 
+* From the **Build target** drop-down list choose the **CORE2** target. Remaining fields should populate automatically.
+
+<p align="center">
+  <img src="./resources/mbed_studio_instruction4.png" />
+</p>
+
+* Save the configuration with **Save all**.
+
+## Building and running
+
+* From the **Build profile** drop-down list select one of the profiles:
+    * Debug (default)
+    * Develop
+    * Release
+
+* Clicking the **hammer** icon will compile your project and generate `bin` file.
+* Clicking on the **play** icon will build the example and flash it to the connected board.
+* Clicking the **bug** icon will start debug session.
+
+<p align="center">
+  <img src="./resources/mbed_studio_instruction5.png" />
+</p>
 
 ## Application functionality
 
 The `main()` function is the single thread in the application. It toggles the state of a digital output connected to an LED on the board.
 
-## Building and running
-
-1. Connect a USB cable between the USB port on the board and the host computer.
-1. Run the following command to build the example project and program the microcontroller flash memory:
-
-    ```bash
-    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
-    ```
-
-Your PC may take a few minutes to compile your code.
-
-The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin`.
-
-Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
-
-Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target:
-
-```bash
-$ mbed compile -S
-```
-
 ## Expected output
 The LED on your target turns on and off every 500 milliseconds.
-
 
 ## Troubleshooting
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
