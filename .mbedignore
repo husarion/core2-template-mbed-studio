@@ -14,4 +14,5 @@ mbed-os/connectivity/nanostack/*
 mbed-os/connectivity/netsocket/*
 mbed-os/connectivity/nfc/*
 mbed-os/features/frameworks/*
+mbed-os/components/*
 mbed-os/storage/kvstore/*
